@@ -1,3 +1,4 @@
+from re import A
 import typer
 from rich.console import Console
 from rich.table import Table
@@ -10,23 +11,27 @@ app = typer.Typer()
 @app.command(short_help='adds an item')
 def add(task: str, category: str):
     typer.echo(f"adding {task}, {category}")
+    show()
 
 @app.command()
 def delete(position: int):
     typer.echo(f"deleting {position}")
+    show()
 
 @app.command()
 def update(position: int, task: str = None, category: str = None):
     typer.echo(f"updating {position}")
+    show()
 
 @app.command()
 def update(position: int, task: str = None, category: str = None):
     typer.echo(f"updating {position}")
+    show()
 
 @app.command()
 def show():
     tasks = ["Task1", "Code Stack", ("Task2", "Deploy Stack")]
-    console.print("[bold magenta] Todos[/bold magenta]!", "💻")
+    console.print("[bold magenta] Projects[/bold magenta]!", "💻")
     table = Table(show_header=True, header_style="bold blue")
     table.add_column("#", style="dim", width=6)
     table.add_column("Todo", min_width=20)
@@ -42,10 +47,10 @@ def show():
     for index, task in enumerate(tasks, start=1):
         c = get_category_color(task[1])
         is_done_str = '✅' if True == 2 else '❌'
-        table.add_row(str(index), task[0], f'[{c}{task[1]}[/{c}'. is_done_str)
+        table.add_row(str(index), task[0], f'[{c}{task[1]}[/{c}', is_done_str)
     console.print(table)
 
-    
+
 
 if __name__ == "__main__":
     app()
