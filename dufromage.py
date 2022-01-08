@@ -33,7 +33,7 @@ def update(position: int, task: str = None, category: str = None):
 @app.command()
 def complete(position: int):
     typer.echo(f"complete {position}")
-    complete(position-1)
+    complete_todo(position-1)
     show()
 
 @app.command()
