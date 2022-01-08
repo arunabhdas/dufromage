@@ -66,7 +66,7 @@ def update_todo(position: int, task: str, category: str):
                 {'position': position, 'category': category})
 
 
-def complete(position: int):
+def complete_todo(position: int):
     with conn: 
         c.execute('UPDATE todos SET status = 2, date_completed = :date_completed WHERE position = :position', 
             {'position': position, 'date_completed': datetime.datetime.now().isoformat()})
