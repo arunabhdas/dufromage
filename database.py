@@ -32,7 +32,7 @@ def get_all_todos() -> List[Todo]:
     results = c.fetchall()
     todos = []
     for result in results:
-        todos.append(Todo(*results))
+        todos.append(Todo(*result))
     return todos
 
 
