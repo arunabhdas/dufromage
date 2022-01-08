@@ -30,7 +30,7 @@ def update(position: int, task: str = None, category: str = None):
 
 @app.command()
 def show():
-    tasks = ["Task1", "Code Stack", ("Task2", "Deploy Stack")]
+    tasks = [("Task1", "Code Stack"), ("Task2", "Deploy Stack")]
     console.print("[bold magenta] Projects[/bold magenta]!", "💻")
     table = Table(show_header=True, header_style="bold blue")
     table.add_column("#", style="dim", width=6)
