@@ -3,7 +3,7 @@
 Project Management for 1337s
 
 
-# Steps
+## Steps
 
 
 ``` 
@@ -15,4 +15,11 @@ Project Management for 1337s
 
 ==> pip install typer
 
+```
+
+## Usage
+
+```
+==> python dufromage.py --help
+Usage: dufromage.py [OPTIONS] COMMAND [ARGS].
 ```
