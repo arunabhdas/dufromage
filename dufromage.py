@@ -47,7 +47,7 @@ def show():
     for index, task in enumerate(tasks, start=1):
         c = get_category_color(task[1])
         is_done_str = '✅' if True == 2 else '❌'
-        table.add_row(str(index), task[0], f'[{c}{task[1]}[/{c}', is_done_str)
+        table.add_row(str(index), task[0], f'[{c}]{task[1]}[/{c}]', is_done_str)
     console.print(table)
 
 
