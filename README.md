@@ -20,6 +20,8 @@ Project Management for 1337s
 ## Usage
 
 ```
+==> source venv/bin/activate
+==> pip install -r requirements.txt
 ==> python dufromage.py --help
 Usage: dufromage.py [OPTIONS] COMMAND [ARGS].
 
