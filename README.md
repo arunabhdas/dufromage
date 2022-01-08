@@ -22,4 +22,8 @@ Project Management for 1337s
 ```
 ==> python dufromage.py --help
 Usage: dufromage.py [OPTIONS] COMMAND [ARGS].
+
+
+==> python dufromage.py show
+
 ```
