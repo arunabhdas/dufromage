@@ -35,4 +35,38 @@ def get_all_todos() -> List(Todo):
         todos.append(Todo(*results))
     return todos
 
-    
+
+def delete_todo(position):
+    c.execute('select count(*) from todos')
+    count = c.fetchone()[0]
+
+    with conn:
+        c.execute("DELETE FROM todos WHERE position =:position", {"position": position})
+        for pos in range(position+1, count):
+            change_position(pos, pos-1, False)
+
+def change_position(old_position: int, new_position: int, commit=True):
+    c.execute('UPDATE todos SET position = :position_new WHERE position = :position_old',
+    {'position_old': old_position, 'position_new': new_position})
+
+    if commit:
+        conn.commit()
+
+
+def update_todo(position: int, task: str, category: str):
+    with conn: 
+        if task is not None and category is not None: 
+            c.execute('UPDATE todos SET task = :task, category = :category WHERE position = :position',
+                {'position': position, 'task': task, 'category': category})
+        elif task is not None:
+            c.execute('UPDATED todos SET task = :task WHERE position = :position', 
+                {'position': position, 'task': task})
+        elif category is not None:
+            c.execute('UPDDATE todos SET category = :category WHERE position = :position',
+                {'position': position, 'category': category})
+
+
+def complete(position: int):
+    with conn: 
+        c.execute('UPDATE todos SET status = 2, date_completed = :date_completed WHERE position = :position', 
+            {'position': position, 'date_completed': datetime.datetime.now().isoformat()})
