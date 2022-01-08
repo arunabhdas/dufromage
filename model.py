@@ -4,7 +4,7 @@ class Todo:
         status = None, position = None):
         self.task = task
         self.category = category
-        self.date_added = date added if date_added is not None else datetime.datetime.now().isoFormat()
+        self.date_added = date_added if date_added is not None else datetime.datetime.now().isoFormat()
         self.date_completed = date_completed if date_completed is not None else None
         self.status = status if status is not None else 1 # 1 = open, 2 = completed
         self.position = position if position is not None else None
