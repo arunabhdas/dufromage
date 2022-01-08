@@ -30,4 +30,4 @@ Usage: dufromage.py [OPTIONS] COMMAND [ARGS].
 
 ## Screenshots
 
-!()[https://raw.githubusercontent.com/arunabhdas/dufromage/main/screenshots/screenshot_1.png]
+![](https://raw.githubusercontent.com/arunabhdas/dufromage/main/screenshots/screenshot_1.png)
